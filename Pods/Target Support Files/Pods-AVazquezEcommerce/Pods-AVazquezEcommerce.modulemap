@@ -1,0 +1,6 @@
+framework module Pods_AVazquezEcommerce {
+  umbrella header "Pods-AVazquezEcommerce-umbrella.h"
+
+  export *
+  module * { export * }
+}
