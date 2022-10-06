@@ -32,7 +32,7 @@ class CollectionViewController: UICollectionViewController {
     func loadData()
     {
         do{
-            var result = try! Usuario.GetAll()
+            var result = try! Producto.GetAll()
             if result.Correct!{
              productos = result.Objects as! [Producto]
                 collectionView.reloadData()
