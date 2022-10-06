@@ -64,6 +64,7 @@ class UsuarioController: UITableViewController {
     }
 
 }
+
 extension UsuarioController : SwipeTableViewCellDelegate{
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         
