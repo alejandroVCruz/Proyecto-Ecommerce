@@ -87,7 +87,7 @@
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="not found" width="200" height="200"/>
         <namedColor name="Color">
-            <color red="0.85275198874021008" green="0.90195667303738625" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.8529999852180481" green="0.90200001001358032" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
