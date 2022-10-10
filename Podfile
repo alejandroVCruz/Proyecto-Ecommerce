@@ -6,6 +6,7 @@ target 'AVazquezEcommerce' do
   use_frameworks!
 
 	pod 'SwipeCellKit'
+  pod 'iOSDropDown'
 
   # Pods for AVazquezEcommerce
 

@@ -4,16 +4,19 @@
 //
 //  Created by MacBookMBA3 on 30/09/22.
 //
+import iOSDropDown
 
 import UIKit
 
 class ProductoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    
     
     let imagePicker = UIImagePickerController()
     
     @IBOutlet weak var imagen: UIImageView!
     
-    var IdProducto : Int = 0
+   
     
     
     @IBOutlet weak var TextNombreProducto: UITextField!
@@ -24,21 +27,31 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBOutlet weak var TextDescripcion: UITextField!
     
-    @IBOutlet weak var TextIdProveedor: UITextField!
+    @IBOutlet weak var DropDownProveedor: DropDown!
     
-    @IBOutlet weak var TextIdDepartamento: UITextField!
+    @IBOutlet weak var DropDownDepartamento: DropDown!
     
     @IBOutlet weak var button: UIButton!
     
-    
+    var IdProducto : Int = 0
+    var arrayProveedor: [String] = []
+    var arrayDepartamento: [String] = []
+    var arrayId: [String] = []
+    var result = Result()
+    var proveedores : [Proveedor] = []
+    var departamentos : [Departamento] = []
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         Validar()
         imagePicker.delegate = self
-
-        // Do any additional setup after loading the view.
+        
+        LoadDataProveedor()
+        DropDownProveedor.optionArray = arrayProveedor
+        
+        LoadDataDepartamento()
+        DropDownDepartamento.optionArray = arrayDepartamento
     }
     
     func Validar(){
@@ -50,8 +63,8 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
                 TextPrecioUnitario.text = String(producto.PrecioUnitario)
                 TextStock.text = String(producto.Stock)
                 TextDescripcion.text = producto.Descripcion
-                TextIdDepartamento.text = String(producto.departamento.IdDepartamento)
-                TextIdProveedor.text = String(producto.proveedor.IdProveedor)
+                DropDownDepartamento.text = String(producto.departamento.IdDepartamento)
+                DropDownProveedor.text = String(producto.proveedor.IdProveedor)
                 
                 button.setTitle("Actualizar", for: .normal)
                 button.backgroundColor = UIColor.yellow
@@ -72,8 +85,8 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
         producto.PrecioUnitario = Double(TextPrecioUnitario.text!)!
         producto.Stock = Int(TextStock.text!)!
         producto.Descripcion = TextDescripcion.text
-        producto.departamento.IdDepartamento = Int(TextIdDepartamento.text!)!
-        producto.proveedor.IdProveedor = Int(TextIdProveedor.text!)!
+        producto.departamento.IdDepartamento = Int(DropDownDepartamento.text!)!
+        producto.proveedor.IdProveedor = Int(DropDownProveedor.text!)!
         
        let textbutton = sender.titleLabel
         if sender.titleLabel?.text == "GUARDAR"{
@@ -109,6 +122,26 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
         let img = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         imagen?.image = img
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func LoadDataProveedor(){
+         result = try! Proveedor.GetAll()
+        if result.Correct!{
+            proveedores = result.Objects as! [Proveedor]
+            for proveedor in proveedores{
+                arrayProveedor.append(proveedor.Nombre!)
+            }
+        }
+    }
+    
+    func LoadDataDepartamento(){
+        result = try! Departamento.GetAll()
+        if result.Correct!{
+            departamentos = result.Objects as! [Departamento]
+            for departamento in departamentos {
+                arrayDepartamento.append(departamento.Nombre!)
+            }
+        }
     }
     
 }

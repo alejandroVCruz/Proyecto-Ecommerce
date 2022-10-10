@@ -31,6 +31,7 @@
 		EFA0E31628EDF1E6007713CD /* ProductoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA0E31428EDF1E6007713CD /* ProductoCollectionViewCell.swift */; };
 		EFA0E31728EDF1E6007713CD /* ProductoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFA0E31528EDF1E6007713CD /* ProductoCollectionViewCell.xib */; };
 		EFA0E31928EE2944007713CD /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA0E31828EE2944007713CD /* LoginController.swift */; };
+		EFA9316128F0E8A6009EEF21 /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFA9316028F0E8A6009EEF21 /* iOSDropDown.framework */; };
 		EFB98A6628ECED200025EC00 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB98A6528ECED200025EC00 /* CollectionViewController.swift */; };
 		EFDF720528E77D7600F192CB /* Producto.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDF720428E77D7600F192CB /* Producto.swift */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		EFA0E31428EDF1E6007713CD /* ProductoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductoCollectionViewCell.swift; sourceTree = "<group>"; };
 		EFA0E31528EDF1E6007713CD /* ProductoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductoCollectionViewCell.xib; sourceTree = "<group>"; };
 		EFA0E31828EE2944007713CD /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		EFA9316028F0E8A6009EEF21 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB98A6528ECED200025EC00 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		EFDF720428E77D7600F192CB /* Producto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Producto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFA9316128F0E8A6009EEF21 /* iOSDropDown.framework in Frameworks */,
 				D2E90FFDC15DDB9F878EBF7F /* Pods_AVazquezEcommerce.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +86,7 @@
 		60BDAF1BB5C6C0028244FD09 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EFA9316028F0E8A6009EEF21 /* iOSDropDown.framework */,
 				95A0F6531AF5159C010D10CF /* Pods_AVazquezEcommerce.framework */,
 			);
 			name = Frameworks;

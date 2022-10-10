@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -127,7 +128,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTi-9v-lLA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="86.25954198473282" y="-4.2253521126760569"/>
+            <point key="canvasLocation" x="776" y="-216"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -306,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="971.7557251908396" y="-4.2253521126760569"/>
+            <point key="canvasLocation" x="1660" y="-216"/>
         </scene>
         <!--USUARIO-->
         <scene sceneID="Qwg-LV-LrY">
@@ -326,7 +327,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oeH-Cd-l6y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-840.45801526717548" y="-4.2253521126760569"/>
+            <point key="canvasLocation" x="-152" y="-216"/>
         </scene>
         <!--Producto Controller-->
         <scene sceneID="O2v-Yp-1OT">
@@ -370,7 +371,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y9S-mK-U0X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="59" y="720"/>
+            <point key="canvasLocation" x="746" y="463"/>
         </scene>
         <!--Producto View Controller-->
         <scene sceneID="twL-F3-cqC">
@@ -438,13 +439,13 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID PROVEEDOR" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Je7-A3-NRE">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID PROVEEDOR" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Je7-A3-NRE" customClass="JRDropDown">
                                                 <rect key="frame" x="20" y="244" width="333" height="34"/>
                                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID DEPARTAMENTO" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mpg-KO-ulq">
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID DEPARTAMENTO" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mpg-KO-ulq" customClass="JRDropDown">
                                                 <rect key="frame" x="20" y="300" width="333" height="34"/>
                                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -517,9 +518,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="vQ8-g1-dd7"/>
                     <connections>
+                        <outlet property="DropDownDepartamento" destination="Mpg-KO-ulq" id="Qbx-RK-Dc9"/>
+                        <outlet property="DropDownProveedor" destination="Je7-A3-NRE" id="5LP-zO-9u4"/>
                         <outlet property="TextDescripcion" destination="Poe-qz-wIR" id="6bD-Oa-tBD"/>
-                        <outlet property="TextIdDepartamento" destination="Mpg-KO-ulq" id="KTD-l7-uPD"/>
-                        <outlet property="TextIdProveedor" destination="Je7-A3-NRE" id="AaG-vn-QdM"/>
                         <outlet property="TextNombreProducto" destination="LnI-o3-iZl" id="DcS-b0-Mo8"/>
                         <outlet property="TextPrecioUnitario" destination="zIf-BD-ORN" id="cdW-pc-8FY"/>
                         <outlet property="TextStock" destination="s3M-O4-eDG" id="hcT-31-mv8"/>
@@ -529,7 +530,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xM2-RF-leU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="971.7557251908396" y="719.71830985915494"/>
+            <point key="canvasLocation" x="1659" y="463"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="7OR-9c-94A">
@@ -555,7 +556,42 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Uq-4p-7qr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-813" y="1515"/>
+            <point key="canvasLocation" x="1073" y="1177"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="IJd-ul-2jt">
+            <objects>
+                <collectionViewController id="JrI-Nj-irw" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="y9i-TK-689">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BsB-Xu-Ggy">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="A4g-iQ-bER">
+                                <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="43h-Es-v9T">
+                                    <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="JrI-Nj-irw" id="D7u-Z5-Bxw"/>
+                            <outlet property="delegate" destination="JrI-Nj-irw" id="AM1-8n-DJi"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="WMj-0M-5gC"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hQe-qf-swA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1047" y="1658"/>
         </scene>
         <!--PRODUCTO-->
         <scene sceneID="G8n-FM-vQP">
@@ -574,7 +610,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NER-20-Cck" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-840" y="720"/>
+            <point key="canvasLocation" x="-153" y="463"/>
         </scene>
         <!--Cards-->
         <scene sceneID="zmk-63-LDZ">
@@ -593,12 +629,30 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pbh-Xo-Y4u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2040" y="1515"/>
+            <point key="canvasLocation" x="-153" y="1177"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="V8N-c1-c5m">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OYB-xc-BVD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mbl-6a-2Ht">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JrI-Nj-irw" kind="relationship" relationship="rootViewController" id="0HQ-FK-nIK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cdV-Qv-4Vg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1973" y="1658"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kUW-Dq-l71"/>
-        <segue reference="Cjo-iP-jD7"/>
+        <segue reference="hJp-Ol-hQy"/>
+        <segue reference="ARl-KR-PdC"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="box.truck" catalog="system" width="128" height="90"/>

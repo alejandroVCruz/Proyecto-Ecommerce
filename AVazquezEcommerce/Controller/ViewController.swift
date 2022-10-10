@@ -11,6 +11,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     let imagePicker = UIImagePickerController()
     
+    
     @IBOutlet weak var Imagen: UIImageView!
     
     var IdUsuario : Int = 0
@@ -33,6 +34,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         Validar()
         imagePicker.delegate = self
+        
+        
     }
     
     func Validar(){
@@ -99,5 +102,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         Imagen?.image = img
         self.dismiss(animated: true, completion: nil)
     }
+    
+  
     
 }
