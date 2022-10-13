@@ -16,8 +16,6 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBOutlet weak var imagen: UIImageView!
     
-   
-    
     
     @IBOutlet weak var TextNombreProducto: UITextField!
     
@@ -34,9 +32,12 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var button: UIButton!
     
     var IdProducto : Int = 0
+    var IdProveedor : Int = 0
+    var IdDepartamento : Int = 0
     var arrayProveedor: [String] = []
     var arrayDepartamento: [String] = []
-    var arrayId: [String] = []
+    var arrayIdDepartamento: [Int] = []
+    var arrayIdProveedor: [Int] = []
     var result = Result()
     var proveedores : [Proveedor] = []
     var departamentos : [Departamento] = []
@@ -49,9 +50,18 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
         
         LoadDataProveedor()
         DropDownProveedor.optionArray = arrayProveedor
+        DropDownProveedor.optionIds = arrayIdProveedor
+        
         
         LoadDataDepartamento()
         DropDownDepartamento.optionArray = arrayDepartamento
+        DropDownDepartamento.optionIds = arrayIdDepartamento
+        
+        DropDownProveedor.didSelect { selectedText, index, id in
+            self.IdProveedor = id }
+        
+        DropDownDepartamento.didSelect { selectedText, index, id in
+            self.IdDepartamento = id }
     }
     
     func Validar(){
@@ -85,8 +95,8 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
         producto.PrecioUnitario = Double(TextPrecioUnitario.text!)!
         producto.Stock = Int(TextStock.text!)!
         producto.Descripcion = TextDescripcion.text
-        producto.departamento.IdDepartamento = Int(DropDownDepartamento.text!)!
-        producto.proveedor.IdProveedor = Int(DropDownProveedor.text!)!
+        producto.departamento.IdDepartamento = IdDepartamento
+        producto.proveedor.IdProveedor = IdProveedor
         
        let textbutton = sender.titleLabel
         if sender.titleLabel?.text == "GUARDAR"{
@@ -130,6 +140,7 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
             proveedores = result.Objects as! [Proveedor]
             for proveedor in proveedores{
                 arrayProveedor.append(proveedor.Nombre!)
+                arrayIdProveedor.append(proveedor.IdProveedor)
             }
         }
     }
@@ -140,6 +151,7 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
             departamentos = result.Objects as! [Departamento]
             for departamento in departamentos {
                 arrayDepartamento.append(departamento.Nombre!)
+                arrayIdDepartamento.append(departamento.IdDepartamento)
             }
         }
     }

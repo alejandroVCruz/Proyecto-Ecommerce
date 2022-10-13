@@ -3,9 +3,9 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,6 +29,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DdE-M9-Za4">
                                 <rect key="frame" x="36" y="60" width="326" height="190"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BIENVENIDOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7o-xJ-tub">
                                 <rect key="frame" x="91" y="293" width="211" height="53"/>
@@ -53,7 +54,7 @@
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Mib-4Y-atz"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Color"/>
                     </view>
                     <connections>
                         <outlet property="TextContraseña" destination="NkU-cA-esJ" id="Br1-zg-eBH"/>
@@ -79,6 +80,7 @@
                         <segue destination="BBh-v3-Gep" kind="relationship" relationship="viewControllers" id="fFh-5d-hBR"/>
                         <segue destination="bLn-M3-K1d" kind="relationship" relationship="viewControllers" id="Okq-rZ-M4O"/>
                         <segue destination="ZGF-oq-teh" kind="relationship" relationship="viewControllers" id="UrQ-eE-oFB"/>
+                        <segue destination="OYB-xc-BVD" kind="relationship" relationship="viewControllers" id="EcN-gt-8VF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WHj-8J-NGO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -556,32 +558,23 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Uq-4p-7qr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1073" y="1177"/>
+            <point key="canvasLocation" x="746" y="1177"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Area Collection View Controller-->
         <scene sceneID="IJd-ul-2jt">
             <objects>
-                <collectionViewController id="JrI-Nj-irw" sceneMemberID="viewController">
+                <collectionViewController id="JrI-Nj-irw" customClass="AreaCollectionViewController" customModule="AVazquezEcommerce" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="y9i-TK-689">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BsB-Xu-Ggy">
-                            <size key="itemSize" width="128" height="128"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BsB-Xu-Ggy">
+                            <size key="itemSize" width="250" height="250"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="A4g-iQ-bER">
-                                <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="43h-Es-v9T">
-                                    <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionViewCellContentView>
-                            </collectionViewCell>
-                        </cells>
+                        <cells/>
                         <connections>
                             <outlet property="dataSource" destination="JrI-Nj-irw" id="D7u-Z5-Bxw"/>
                             <outlet property="delegate" destination="JrI-Nj-irw" id="AM1-8n-DJi"/>
@@ -591,7 +584,32 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQe-qf-swA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1047" y="1658"/>
+            <point key="canvasLocation" x="-1158" y="2125"/>
+        </scene>
+        <!--Departamento Collection View Controller-->
+        <scene sceneID="C6t-ca-PuZ">
+            <objects>
+                <collectionViewController id="tW9-YI-QK7" customClass="DepartamentoCollectionViewController" customModule="AVazquezEcommerce" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="kph-6E-jBe">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MX6-Xk-cWa">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <connections>
+                            <outlet property="dataSource" destination="tW9-YI-QK7" id="vQx-il-t3Q"/>
+                            <outlet property="delegate" destination="tW9-YI-QK7" id="syZ-Mk-IsE"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LMb-ec-lzw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="746" y="2125"/>
         </scene>
         <!--PRODUCTO-->
         <scene sceneID="G8n-FM-vQP">
@@ -631,13 +649,14 @@
             </objects>
             <point key="canvasLocation" x="-153" y="1177"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--AREA-->
         <scene sceneID="V8N-c1-c5m">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OYB-xc-BVD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="AREA" image="paperplane.circle" catalog="system" selectedImage="book.fill" id="xNz-OM-f21"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mbl-6a-2Ht">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -647,7 +666,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdV-Qv-4Vg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1973" y="1658"/>
+            <point key="canvasLocation" x="-2040" y="2101"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -655,14 +674,19 @@
         <segue reference="ARl-KR-PdC"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="book.fill" catalog="system" width="128" height="95"/>
         <image name="box.truck" catalog="system" width="128" height="90"/>
         <image name="camera.fill" catalog="system" width="128" height="93"/>
         <image name="camera.on.rectangle.fill" catalog="system" width="128" height="98"/>
         <image name="folder.fill" catalog="system" width="128" height="96"/>
         <image name="greetingcard" catalog="system" width="108" height="128"/>
+        <image name="paperplane.circle" catalog="system" width="128" height="123"/>
         <image name="person.circle" catalog="system" width="128" height="123"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="shippingbox" catalog="system" width="128" height="123"/>
+        <namedColor name="Color">
+            <color red="0.8529999852180481" green="0.90200001001358032" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

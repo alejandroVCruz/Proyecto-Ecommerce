@@ -1,47 +1,45 @@
 //
-//  CollectionViewController.swift
+//  AreaCollectionViewController.swift
 //  AVazquezEcommerce
 //
-//  Created by MacBookMBA3 on 04/10/22.
+//  Created by MacBookMBA3 on 11/10/22.
 //
 
 import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class CollectionViewController: UICollectionViewController {
+class AreaCollectionViewController: UICollectionViewController {
     
-    var producto = Producto()
-    var productos : [Producto] = []
-    
-    
+    var area = Area()
+    var areas : [Area] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
         //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-            collectionView.register(UINib(nibName: "ProductoCollectionViewCell", bundle: nil),forCellWithReuseIdentifier: "ProductoCollectionViewCell")
+        collectionView.register(UINib(nibName: "AreaCollectionViewCell", bundle: nil),forCellWithReuseIdentifier: "AreaCollectionViewCell")
         // Do any additional setup after loading the view.
     }
+
     func loadData()
     {
         do{
-            var result = try! Producto.GetAll()
+            var result = try! Area.GetAll()
             if result.Correct!{
-             productos = result.Objects as! [Producto]
+             areas = result.Objects as! [Area]
                 collectionView.reloadData()
             }
         }catch{
             print("Ocurrio un error")
         }
     }
-
+    
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -51,22 +49,17 @@ class CollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return productos.count
+        return areas.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductoCollectionViewCell", for: indexPath) as! ProductoCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AreaCollectionViewCell", for: indexPath) as! AreaCollectionViewCell
     
-        
-        
-        let producto : Producto = productos[indexPath.row]
-        cell.Nombre.text = producto.Nombre
-        cell.Precio.text = String(producto.PrecioUnitario)
-        
-
-
+        let area : Area = areas[indexPath.row]
+        cell.Nombre.text = area.Nombre
+    
         return cell
     }
 
-
+   
 }
