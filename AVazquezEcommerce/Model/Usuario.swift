@@ -46,17 +46,17 @@ class Usuario{
             result.Ex = error
             result.ErrorMessage = error.localizedDescription
         }
-        sqlite3_close(conexion.db)
+        //sqlite3_close(conexion.db)
         return result
         }
     
-    static func Add(_ usuario : Usuario){
-        
+    static func Add(_ usuario : Usuario)->Result{
+        let result = Result()
         let query = "INSERT INTO Usuario (Nombre,ApellidoPaterno,ApellidoMaterno,Username,Contrasena) VALUES(?,?,?,?,?);"
-        
         let conexion = Conexion.init()
-        var statement : OpaquePointer? = nil
         
+        var statement : OpaquePointer? = nil
+        do{
         if sqlite3_prepare_v2(conexion.db, query, -1 , &statement , nil) == SQLITE_OK{
             
             sqlite3_bind_text(statement, 1, (usuario.Nombre! as NSString).utf8String, -1, nil)
@@ -65,13 +65,25 @@ class Usuario{
             sqlite3_bind_text(statement, 4, (usuario.Username! as NSString).utf8String, -1, nil)
             sqlite3_bind_text(statement, 5, (usuario.Contrasena! as NSString).utf8String, -1, nil)
             
+            result.Correct = true
             if sqlite3_step(statement) == SQLITE_DONE {
                 print("Usuario agregado exitosamente")
             }else{
-                print("No se encontro ningun dato en la tabla usuario")
+                let errmsg = String(cString: sqlite3_errmsg(conexion.db))
+                print("No se agrego ningun dato en la tabla usuario\(errmsg)")
+                result.Correct = false
+                result.ErrorMessage = "No se agrego el usuario"
             }
             
         }
+        }catch let error{
+            result.Correct = false
+            result.Ex = error
+            result.ErrorMessage = error.localizedDescription
+        }
+        sqlite3_close(conexion.db)
+        sqlite3_finalize(statement)
+        return result
     }
     
     static func Update(_ usuario: Usuario)->Result{
@@ -94,7 +106,7 @@ class Usuario{
                     result.Ex = error
                     result.ErrorMessage = error.localizedDescription
                 }
-                sqlite3_close(conexion.db)
+                //sqlite3_close(conexion.db)
                 return result
     }
     
@@ -129,7 +141,7 @@ class Usuario{
             result.Ex = error
             result.ErrorMessage = error.localizedDescription
         }
-        sqlite3_close(conexion.db)
+        //sqlite3_close(conexion.db)
         return result
     }
     
@@ -160,14 +172,14 @@ class Usuario{
             }
             else{
                 result.Correct = false
-                result.ErrorMessage = "No se encontro ninguna dato en la tabla usuario"
+                result.ErrorMessage = "NO SE AGREGO EL USUARIO"
             }
         }catch let error{
             result.Correct = false
             result.Ex = error
             result.ErrorMessage = error.localizedDescription
         }
-        sqlite3_close(conexion.db)
+        //sqlite3_close(conexion.db)
         return result
     }
     

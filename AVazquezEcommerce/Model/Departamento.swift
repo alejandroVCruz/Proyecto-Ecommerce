@@ -11,7 +11,8 @@ import Foundation
 class Departamento{
     var IdDepartamento : Int = 0
     var Nombre: String? = nil
-    
+    var IdArea: Int = 0
+   
     
     static func GetAll()->Result{
         let result = Result()
@@ -40,8 +41,43 @@ class Departamento{
             result.Ex = error
             result.ErrorMessage = error.localizedDescription
         }
-        sqlite3_close(conexion.db)
+        //sqlite3_close(conexion.db)
         return result
     }
+    
+    
+    static func GetById(_ IdArea : Int)->Result{
+        let result = Result()
+        let query = "Select IdDepartamento,Nombre,IdArea from Departamento where IdArea = \(IdArea)"
+        var statement : OpaquePointer? = nil
+        let conexion = Conexion.init()
+        do{
+            if let context = try? sqlite3_prepare_v2(conexion.db,query,-1,&statement,nil) == SQLITE_OK {
+                result.Objects = [Any]()
+                while sqlite3_step(statement) == SQLITE_ROW {
+                    let departamento = Departamento()
+                    
+                    departamento.IdDepartamento = Int(sqlite3_column_int(statement,0))
+                    departamento.Nombre = String(String(cString: sqlite3_column_text(statement, 1)))
+                    departamento.IdArea = Int(sqlite3_column_int(statement,3))
+                    
+                    
+                    result.Objects?.append(departamento)
+                }
+                result.Correct = true
+            }
+            else{
+                result.Correct = false
+                result.ErrorMessage = "No se encontro ningun dato"
+            }
+        }catch let error{
+            result.Correct = false
+            result.Ex = error
+            result.ErrorMessage = error.localizedDescription
+        }
+       // sqlite3_close(conexion.db)
+        return result
+    }
+   
 }
 

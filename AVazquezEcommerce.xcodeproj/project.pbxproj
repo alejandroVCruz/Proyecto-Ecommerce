@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		D2E90FFDC15DDB9F878EBF7F /* Pods_AVazquezEcommerce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A0F6531AF5159C010D10CF /* Pods_AVazquezEcommerce.framework */; };
 		EF0FCD5728DB64FD002E82FE /* Conexion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0FCD5628DB64FD002E82FE /* Conexion.swift */; };
+		EF16C1E228FEFA60000C7840 /* ProveedorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF16C1E128FEFA60000C7840 /* ProveedorTableViewController.swift */; };
+		EF16C1E428FF1196000C7840 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF16C1E328FF1196000C7840 /* GoogleService-Info.plist */; };
+		EF16C1E728FF14B7000C7840 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EF16C1E628FF14B7000C7840 /* FirebaseAuth */; };
+		EF16C1E928FF14B7000C7840 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EF16C1E828FF14B7000C7840 /* FirebaseFirestore */; };
+		EF16C1EC28FF17E0000C7840 /* ProveedorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF16C1EA28FF17E0000C7840 /* ProveedorCell.swift */; };
+		EF16C1ED28FF17E0000C7840 /* ProveedorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF16C1EB28FF17E0000C7840 /* ProveedorCell.xib */; };
 		EF1783BF28DA3C32009DED34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1783BE28DA3C32009DED34 /* AppDelegate.swift */; };
 		EF1783C128DA3C32009DED34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1783C028DA3C32009DED34 /* SceneDelegate.swift */; };
 		EF1783C328DA3C32009DED34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1783C228DA3C32009DED34 /* ViewController.swift */; };
@@ -17,7 +23,9 @@
 		EF1783CB28DA3C33009DED34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1783CA28DA3C33009DED34 /* Assets.xcassets */; };
 		EF1783CE28DA3C33009DED34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF1783CC28DA3C33009DED34 /* LaunchScreen.storyboard */; };
 		EF1783D628DA3C66009DED34 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1783D528DA3C66009DED34 /* Usuario.swift */; };
+		EF392C9228FDD2E2006B79B2 /* ProductoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF392C9128FDD2E2006B79B2 /* ProductoCollectionViewController.swift */; };
 		EF62A81428EB38500048F2FE /* ProductoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62A81328EB38500048F2FE /* ProductoController.swift */; };
+		EF7E57D428FF2AAA00E4C5CF /* ProveedorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E57D328FF2AA900E4C5CF /* ProveedorViewController.swift */; };
 		EF824C3B28E7980300772347 /* ProductoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF824C3A28E7980300772347 /* ProductoViewController.swift */; };
 		EF8CAB0728DE2641001313A9 /* UsuarioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8CAB0628DE2641001313A9 /* UsuarioController.swift */; };
 		EF8EE75228DCB1A1008C6421 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8EE75128DCB1A1008C6421 /* Result.swift */; };
@@ -45,6 +53,10 @@
 		7A18AF5058FE08A403183DF4 /* Pods-AVazquezEcommerce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVazquezEcommerce.debug.xcconfig"; path = "Target Support Files/Pods-AVazquezEcommerce/Pods-AVazquezEcommerce.debug.xcconfig"; sourceTree = "<group>"; };
 		95A0F6531AF5159C010D10CF /* Pods_AVazquezEcommerce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AVazquezEcommerce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF0FCD5628DB64FD002E82FE /* Conexion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conexion.swift; sourceTree = "<group>"; };
+		EF16C1E128FEFA60000C7840 /* ProveedorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProveedorTableViewController.swift; sourceTree = "<group>"; };
+		EF16C1E328FF1196000C7840 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EF16C1EA28FF17E0000C7840 /* ProveedorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProveedorCell.swift; sourceTree = "<group>"; };
+		EF16C1EB28FF17E0000C7840 /* ProveedorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProveedorCell.xib; sourceTree = "<group>"; };
 		EF1783BB28DA3C32009DED34 /* AVazquezEcommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVazquezEcommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1783BE28DA3C32009DED34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF1783C028DA3C32009DED34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +67,9 @@
 		EF1783CD28DA3C33009DED34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF1783CF28DA3C33009DED34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF1783D528DA3C66009DED34 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		EF392C9128FDD2E2006B79B2 /* ProductoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductoCollectionViewController.swift; sourceTree = "<group>"; };
 		EF62A81328EB38500048F2FE /* ProductoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductoController.swift; sourceTree = "<group>"; };
+		EF7E57D328FF2AA900E4C5CF /* ProveedorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProveedorViewController.swift; sourceTree = "<group>"; };
 		EF824C3A28E7980300772347 /* ProductoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductoViewController.swift; sourceTree = "<group>"; };
 		EF8CAB0628DE2641001313A9 /* UsuarioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioController.swift; sourceTree = "<group>"; };
 		EF8EE75128DCB1A1008C6421 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -84,6 +98,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFA9316128F0E8A6009EEF21 /* iOSDropDown.framework in Frameworks */,
+				EF16C1E928FF14B7000C7840 /* FirebaseFirestore in Frameworks */,
+				EF16C1E728FF14B7000C7840 /* FirebaseAuth in Frameworks */,
 				D2E90FFDC15DDB9F878EBF7F /* Pods_AVazquezEcommerce.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +154,7 @@
 				EF1783CA28DA3C33009DED34 /* Assets.xcassets */,
 				EF1783CC28DA3C33009DED34 /* LaunchScreen.storyboard */,
 				EF1783CF28DA3C33009DED34 /* Info.plist */,
+				EF16C1E328FF1196000C7840 /* GoogleService-Info.plist */,
 				EF1783C728DA3C32009DED34 /* AVazquezEcommerce.xcdatamodeld */,
 			);
 			path = AVazquezEcommerce;
@@ -155,6 +172,8 @@
 				EFA0E31528EDF1E6007713CD /* ProductoCollectionViewCell.xib */,
 				EF94D7F328F5D35D005C77A0 /* AreaCollectionViewCell.swift */,
 				EF94D7F428F5D35D005C77A0 /* AreaCollectionViewCell.xib */,
+				EF16C1EA28FF17E0000C7840 /* ProveedorCell.swift */,
+				EF16C1EB28FF17E0000C7840 /* ProveedorCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,6 +189,9 @@
 				EFA0E31828EE2944007713CD /* LoginController.swift */,
 				EF94D7F128F5D30F005C77A0 /* AreaCollectionViewController.swift */,
 				EF94D7F728F5EC42005C77A0 /* DepartamentoCollectionViewController.swift */,
+				EF392C9128FDD2E2006B79B2 /* ProductoCollectionViewController.swift */,
+				EF16C1E128FEFA60000C7840 /* ProveedorTableViewController.swift */,
+				EF7E57D328FF2AA900E4C5CF /* ProveedorViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -206,6 +228,10 @@
 			dependencies = (
 			);
 			name = AVazquezEcommerce;
+			packageProductDependencies = (
+				EF16C1E628FF14B7000C7840 /* FirebaseAuth */,
+				EF16C1E828FF14B7000C7840 /* FirebaseFirestore */,
+			);
 			productName = AVazquezEcommerce;
 			productReference = EF1783BB28DA3C32009DED34 /* AVazquezEcommerce.app */;
 			productType = "com.apple.product-type.application";
@@ -234,6 +260,9 @@
 				Base,
 			);
 			mainGroup = EF1783B228DA3C32009DED34;
+			packageReferences = (
+				EF16C1E528FF14B7000C7840 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = EF1783BC28DA3C32009DED34 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -249,12 +278,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF9BE33D28E4A9A700EF9FA3 /* ProductoCell.xib in Resources */,
+				EF16C1E428FF1196000C7840 /* GoogleService-Info.plist in Resources */,
 				EF96B9C728E2015300459700 /* UsuarioCell.xib in Resources */,
 				EFA0E31728EDF1E6007713CD /* ProductoCollectionViewCell.xib in Resources */,
 				EF1783CE28DA3C33009DED34 /* LaunchScreen.storyboard in Resources */,
 				EF1783CB28DA3C33009DED34 /* Assets.xcassets in Resources */,
 				EF1783C628DA3C32009DED34 /* Main.storyboard in Resources */,
 				EF94D7F628F5D35D005C77A0 /* AreaCollectionViewCell.xib in Resources */,
+				EF16C1ED28FF17E0000C7840 /* ProveedorCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,10 +339,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFA0E31928EE2944007713CD /* LoginController.swift in Sources */,
+				EF7E57D428FF2AAA00E4C5CF /* ProveedorViewController.swift in Sources */,
 				EFDF720528E77D7600F192CB /* Producto.swift in Sources */,
+				EF16C1E228FEFA60000C7840 /* ProveedorTableViewController.swift in Sources */,
 				EF1783C328DA3C32009DED34 /* ViewController.swift in Sources */,
 				EF1783C928DA3C32009DED34 /* AVazquezEcommerce.xcdatamodeld in Sources */,
 				EF62A81428EB38500048F2FE /* ProductoController.swift in Sources */,
+				EF16C1EC28FF17E0000C7840 /* ProveedorCell.swift in Sources */,
 				EF94D7F228F5D30F005C77A0 /* AreaCollectionViewController.swift in Sources */,
 				EFA0B2DB28EB9C2400A5BD9A /* Proveedor.swift in Sources */,
 				EF0FCD5728DB64FD002E82FE /* Conexion.swift in Sources */,
@@ -326,6 +360,7 @@
 				EFA0B2D928EB9C0500A5BD9A /* Departamento.swift in Sources */,
 				EF1783D628DA3C66009DED34 /* Usuario.swift in Sources */,
 				EF8CAB0728DE2641001313A9 /* UsuarioController.swift in Sources */,
+				EF392C9228FDD2E2006B79B2 /* ProductoCollectionViewController.swift in Sources */,
 				EF824C3B28E7980300772347 /* ProductoViewController.swift in Sources */,
 				EFA0B2DD28EB9C3800A5BD9A /* Area.swift in Sources */,
 				EF1783C128DA3C32009DED34 /* SceneDelegate.swift in Sources */,
@@ -546,6 +581,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EF16C1E528FF14B7000C7840 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EF16C1E628FF14B7000C7840 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF16C1E528FF14B7000C7840 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		EF16C1E828FF14B7000C7840 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EF16C1E528FF14B7000C7840 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		EF1783C728DA3C32009DED34 /* AVazquezEcommerce.xcdatamodeld */ = {

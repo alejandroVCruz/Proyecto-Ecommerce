@@ -1,78 +1,73 @@
 //
-//  UsuarioController.swift
+//  ProveedorTableViewController.swift
 //  AVazquezEcommerce
 //
-//  Created by MacBookMBA3 on 23/09/22.
+//  Created by MacBookMBA3 on 18/10/22.
 //
-
 import SwipeCellKit
 
 import UIKit
 
-class UsuarioController: UITableViewController {
-
-    var usuario = Usuario()
-    var usuarios : [Usuario] = []
+class ProveedorTableViewController: UITableViewController {
     
+    var proveedor = Proveedor()
+    var proveedores : [Proveedor] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
-       	loadData()
         
-        tableView.register(UINib(nibName: "UsuarioCell", bundle: nil),forCellReuseIdentifier: "UsuarioCell")
-       
+       loadData()
+        
+        tableView.register(UINib(nibName: "ProveedorCell", bundle: nil),forCellReuseIdentifier: "ProveedorCell")
+        
     }
     
     func loadData()
     {
         do{
-            var result = try! Usuario.GetAll()
+            var result = try! Proveedor.GetAll()
             if result.Correct!{
-             usuarios = result.Objects as! [Usuario]
+             proveedores = result.Objects as! [Proveedor]
                 tableView.reloadData()
             }
         }catch{
             print("Ocurrio un error")
         }
     }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-	
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return usuarios.count
+        return proveedores.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UsuarioCell", for: indexPath) as! UsuarioCell
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProveedorCell", for: indexPath) as! ProveedorCell
         
         cell.delegate = self
         
-        let usuario : Usuario = usuarios[indexPath.row]
-        cell.Nombre.text = usuario.Nombre
-        cell.ApellidoPaterno.text = usuario.ApellidoPaterno
-        cell.ApellidoMaterno.text = usuario.ApellidoMaterno
-        cell.Username.text = usuario.Username
-        cell.Contrasena.text = usuario.Contrasena
+        let proveedor : Proveedor = proveedores[indexPath.row]
+        cell.Nombre.text = proveedor.Nombre
+        cell.Telefono.text = String(proveedor.Telefono)
         
         return cell
     }
-
+    
 }
 
-extension UsuarioController : SwipeTableViewCellDelegate{
+extension ProveedorTableViewController : SwipeTableViewCellDelegate{
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         
         if orientation == .right{
             let deleteAction = SwipeAction(style: .destructive, title: "Borrar") { action, indexPath in
-                let usuario : Usuario = self.usuarios[indexPath.row] as! Usuario
-                Usuario.Delete(IdUsuario: usuario.IdUsuario)
+                let proveedor : Proveedor = self.proveedores[indexPath.row] as! Proveedor
+                Proveedor.Delete(IdProveedor: proveedor.IdProveedor)
                 self.loadData()
             }
             
@@ -80,9 +75,8 @@ extension UsuarioController : SwipeTableViewCellDelegate{
             
             
         }else {let UpdateAction = SwipeAction(style: .default, title: "Actualizar") { action, indexPath in
-            self.usuario = self.usuarios[indexPath.row] as! Usuario
-            self.performSegue(withIdentifier: "UsuarioSegues", sender: self)
-            self.loadData()
+            self.proveedor = self.proveedores[indexPath.row]
+            self.performSegue(withIdentifier: "proveedor", sender: self)
         }
         return [UpdateAction]
             
@@ -90,10 +84,10 @@ extension UsuarioController : SwipeTableViewCellDelegate{
         }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "UsuarioSegues"{
-            var UsuarioController = segue.destination as? ViewController
+        if segue.identifier == "proveedor"{
+            var ProveedorController = segue.destination as? ProveedorViewController
             
-            UsuarioController?.IdUsuario = self.usuario.IdUsuario
+            ProveedorController?.IdProveedor = self.proveedor.IdProveedor
             
             //var ViewController = segue.destination as? ViewController
                 

@@ -11,6 +11,7 @@ private let reuseIdentifier = "Cell"
 
 class AreaCollectionViewController: UICollectionViewController {
     
+    var IdArea : Int = 0
     var area = Area()
     var areas : [Area] = []
 
@@ -40,7 +41,6 @@ class AreaCollectionViewController: UICollectionViewController {
         }
     }
     
-
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -50,6 +50,13 @@ class AreaCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return areas.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        self.area = self.areas[indexPath.row] as! Area
+        self.performSegue(withIdentifier: "Id", sender: self)
+        self.loadData()
+        return true
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -61,5 +68,15 @@ class AreaCollectionViewController: UICollectionViewController {
         return cell
     }
 
-   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Id"{
+            var AreaController = segue.destination as? DepartamentoCollectionViewController
+            
+            AreaController?.IdArea = self.area.IdArea
+            
+            //var ViewController = segue.destination as? ViewController
+                
+                        //    ViewController?.IdUsuario =  self.usuario.IdUsuario
+          }
+       }
 }

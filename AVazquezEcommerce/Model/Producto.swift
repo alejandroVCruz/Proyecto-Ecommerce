@@ -9,6 +9,7 @@ import Foundation
 import SQLite3
 
 class Producto{
+    var IdDepartamento : Int = 0
     var IdProducto : Int = 0
     var Nombre: String? = nil
     var PrecioUnitario: Double = 0
@@ -39,7 +40,8 @@ class Producto{
                 if sqlite3_step(statement) == SQLITE_DONE {
                     print("Producto agregado exitosamente")
                 }else{
-                    print("No se agrego ningun producto")
+                    let errmsg = String(cString: sqlite3_errmsg(conexion.db))
+                    print("No se agrego ningun producto  \(errmsg)")
                 }
             }
     }
@@ -69,6 +71,7 @@ class Producto{
     static func GetAll()->Result{
         let result = Result()
         let query = "Select IdProducto,NombreProducto,PrecioUnitario,Stock,IdProveedor,IdDepartamento,Descripcion from Producto"
+        //let query = "Select Producto.IdProducto,Producto.NombreProducto,Producto.PrecioUnitario,Producto.Stock,Producto.Descripcion,Proveedor.IdProveedor,Proveedor.NombreProveedor,Departamento.IdDepartamento,Departamento.NombreDepartamento from Producto INNER JOIN Proveedor ON(Producto.IdProveedor = Proveedor.IdProveedor) INNER JOIN Departamento ON (Producto.IdDepartamento = Departamento.IdDepartamento)"
         var statement : OpaquePointer? = nil
         let conexion = Conexion.init()
         do{
@@ -98,7 +101,7 @@ class Producto{
             result.Ex = error
             result.ErrorMessage = error.localizedDescription
         }
-        sqlite3_close(conexion.db)
+        //sqlite3_close(conexion.db)
         return result
     }
     
@@ -135,7 +138,7 @@ class Producto{
             result.Ex = error
             result.ErrorMessage = error.localizedDescription
         }
-        sqlite3_close(conexion.db)
+        //sqlite3_close(conexion.db)
         return result
     }
     
@@ -152,5 +155,43 @@ class Producto{
                 print("Error al eliminar el usuario")
             }
         }
+    }
+    
+    
+    
+    static func GetByIdP(_ IdDepartamente : Int)->Result{
+        let result = Result()
+        let query = "Select IdProducto,NombreProducto,PrecioUnitario,Stock,IdProveedor,IdDepartamento,Descripcion from Producto where IdDepartamento = \(IdDepartamente) "
+        var statement : OpaquePointer? = nil
+        let conexion = Conexion.init()
+        do{
+            if let context = try? sqlite3_prepare_v2(conexion.db,query,-1,&statement,nil) == SQLITE_OK {
+                result.Objects = [Any]()
+                while sqlite3_step(statement) == SQLITE_ROW {
+                    let producto = Producto()
+                    
+                    producto.IdProducto = Int(sqlite3_column_int(statement,0))
+                    producto.Nombre = String(String(cString: sqlite3_column_text(statement, 1)))
+                    producto.PrecioUnitario = Double(sqlite3_column_double(statement,2))
+                    producto.Stock = Int(sqlite3_column_int(statement,3))
+                    producto.proveedor.IdProveedor  = Int(sqlite3_column_int(statement,4))
+                    producto.departamento.IdDepartamento = Int(sqlite3_column_int(statement,5))
+                    producto.Descripcion = String(String(cString: sqlite3_column_text(statement, 6)))
+                    
+                    result.Objects?.append(producto)
+                }
+                result.Correct = true
+            }
+            else{
+                result.Correct = false
+                result.ErrorMessage = "No se encontro ningun dato en la tabla Producto"
+            }
+        }catch let error{
+            result.Correct = false
+            result.Ex = error
+            result.ErrorMessage = error.localizedDescription
+        }
+        sqlite3_close(conexion.db)
+        return result
     }
 }
