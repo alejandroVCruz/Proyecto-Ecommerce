@@ -45,6 +45,10 @@
 		EFA0E31928EE2944007713CD /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA0E31828EE2944007713CD /* LoginController.swift */; };
 		EFA9316128F0E8A6009EEF21 /* iOSDropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFA9316028F0E8A6009EEF21 /* iOSDropDown.framework */; };
 		EFB98A6628ECED200025EC00 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB98A6528ECED200025EC00 /* CollectionViewController.swift */; };
+		EFCDB9472909947900A73C98 /* DepartamentoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDB9452909947900A73C98 /* DepartamentoCell.swift */; };
+		EFCDB9482909947900A73C98 /* DepartamentoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFCDB9462909947900A73C98 /* DepartamentoCell.xib */; };
+		EFCDB94A2909984000A73C98 /* DepartamentoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDB9492909984000A73C98 /* DepartamentoTableViewController.swift */; };
+		EFCDB94C29099E9800A73C98 /* DepartamentoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDB94B29099E9800A73C98 /* DepartamentoController.swift */; };
 		EFDF720528E77D7600F192CB /* Producto.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDF720428E77D7600F192CB /* Producto.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +93,10 @@
 		EFA0E31828EE2944007713CD /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		EFA9316028F0E8A6009EEF21 /* iOSDropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iOSDropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB98A6528ECED200025EC00 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		EFCDB9452909947900A73C98 /* DepartamentoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartamentoCell.swift; sourceTree = "<group>"; };
+		EFCDB9462909947900A73C98 /* DepartamentoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DepartamentoCell.xib; sourceTree = "<group>"; };
+		EFCDB9492909984000A73C98 /* DepartamentoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartamentoTableViewController.swift; sourceTree = "<group>"; };
+		EFCDB94B29099E9800A73C98 /* DepartamentoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartamentoController.swift; sourceTree = "<group>"; };
 		EFDF720428E77D7600F192CB /* Producto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Producto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,6 +182,8 @@
 				EF94D7F428F5D35D005C77A0 /* AreaCollectionViewCell.xib */,
 				EF16C1EA28FF17E0000C7840 /* ProveedorCell.swift */,
 				EF16C1EB28FF17E0000C7840 /* ProveedorCell.xib */,
+				EFCDB9452909947900A73C98 /* DepartamentoCell.swift */,
+				EFCDB9462909947900A73C98 /* DepartamentoCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,6 +202,8 @@
 				EF392C9128FDD2E2006B79B2 /* ProductoCollectionViewController.swift */,
 				EF16C1E128FEFA60000C7840 /* ProveedorTableViewController.swift */,
 				EF7E57D328FF2AA900E4C5CF /* ProveedorViewController.swift */,
+				EFCDB9492909984000A73C98 /* DepartamentoTableViewController.swift */,
+				EFCDB94B29099E9800A73C98 /* DepartamentoController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -286,6 +298,7 @@
 				EF1783C628DA3C32009DED34 /* Main.storyboard in Resources */,
 				EF94D7F628F5D35D005C77A0 /* AreaCollectionViewCell.xib in Resources */,
 				EF16C1ED28FF17E0000C7840 /* ProveedorCell.xib in Resources */,
+				EFCDB9482909947900A73C98 /* DepartamentoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,12 +358,14 @@
 				EF1783C328DA3C32009DED34 /* ViewController.swift in Sources */,
 				EF1783C928DA3C32009DED34 /* AVazquezEcommerce.xcdatamodeld in Sources */,
 				EF62A81428EB38500048F2FE /* ProductoController.swift in Sources */,
+				EFCDB94A2909984000A73C98 /* DepartamentoTableViewController.swift in Sources */,
 				EF16C1EC28FF17E0000C7840 /* ProveedorCell.swift in Sources */,
 				EF94D7F228F5D30F005C77A0 /* AreaCollectionViewController.swift in Sources */,
 				EFA0B2DB28EB9C2400A5BD9A /* Proveedor.swift in Sources */,
 				EF0FCD5728DB64FD002E82FE /* Conexion.swift in Sources */,
 				EFA0E31628EDF1E6007713CD /* ProductoCollectionViewCell.swift in Sources */,
 				EF96B9C628E2015300459700 /* UsuarioCell.swift in Sources */,
+				EFCDB94C29099E9800A73C98 /* DepartamentoController.swift in Sources */,
 				EF94D7F828F5EC42005C77A0 /* DepartamentoCollectionViewController.swift in Sources */,
 				EF1783BF28DA3C32009DED34 /* AppDelegate.swift in Sources */,
 				EF9BE33C28E4A9A700EF9FA3 /* ProductoCell.swift in Sources */,
@@ -363,6 +378,7 @@
 				EF392C9228FDD2E2006B79B2 /* ProductoCollectionViewController.swift in Sources */,
 				EF824C3B28E7980300772347 /* ProductoViewController.swift in Sources */,
 				EFA0B2DD28EB9C3800A5BD9A /* Area.swift in Sources */,
+				EFCDB9472909947900A73C98 /* DepartamentoCell.swift in Sources */,
 				EF1783C128DA3C32009DED34 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

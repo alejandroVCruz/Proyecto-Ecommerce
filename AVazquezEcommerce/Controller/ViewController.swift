@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     
     let imagePicker = UIImagePickerController()
-    
+
     
     @IBOutlet weak var Imagen: UIImageView!
     
@@ -48,6 +48,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 TextApellidoMaterno.text = usuario.ApellidoMaterno
                 TextUserName.text = usuario.Username
                 TextContraseña.text = usuario.Contrasena
+                //Imagen.image = usuario.Imagen
                 
                 button.setTitle("Actualizar", for: .normal)
                 button.backgroundColor = UIColor.yellow
@@ -61,6 +62,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    
     @IBAction func AddButton(_ sender: UIButton) {
         let usuario = Usuario()
         usuario.Nombre=TextNombre.text
@@ -68,6 +70,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         usuario.ApellidoMaterno=TextApellidoMaterno.text
         usuario.Username=TextUserName.text
         usuario.Contrasena=TextContraseña.text
+        let image : UIImage = Imagen.image!
+        let imageData:NSData = image.pngData()! as NSData
+        usuario.Imagen = imageData.base64EncodedString(options: .lineLength64Characters)
         
        let textbutton = sender.titleLabel
         if sender.titleLabel?.text == "GUARDAR"{

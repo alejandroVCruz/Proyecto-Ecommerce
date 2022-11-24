@@ -89,6 +89,7 @@
                 <outlet property="ApellidoMaterno" destination="Ooz-ea-6cj" id="WiC-z1-i1w"/>
                 <outlet property="ApellidoPaterno" destination="4k1-So-NBF" id="oKq-5F-hA8"/>
                 <outlet property="Contrasena" destination="R7o-sX-EKX" id="NSd-N7-ttV"/>
+                <outlet property="Imagen" destination="daY-de-Qf1" id="brQ-bc-cJh"/>
                 <outlet property="Nombre" destination="Tv8-pL-HTd" id="C0I-ME-fEF"/>
                 <outlet property="Username" destination="nPb-2P-VZW" id="JfU-2W-0HH"/>
             </connections>

@@ -155,5 +155,4 @@ class ProductoViewController: UIViewController, UIImagePickerControllerDelegate,
             }
         }
     }
-    
 }

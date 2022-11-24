@@ -1,26 +1,21 @@
 //
-//  UsuarioCell.swift
+//  DepartamentoCell.swift
 //  AVazquezEcommerce
 //
-//  Created by MacBookMBA3 on 26/09/22.
+//  Created by MacBookMBA3 on 26/10/22.
 //
 import SwipeCellKit
 
 import UIKit
 
-class UsuarioCell: SwipeTableViewCell {
+class DepartamentoCell: SwipeTableViewCell {
+    
+    
+    @IBOutlet weak var IdDepartamento: UILabel!
     
     @IBOutlet weak var Nombre: UILabel!
     
-    @IBOutlet weak var ApellidoPaterno: UILabel!
-    
-    @IBOutlet weak var ApellidoMaterno: UILabel!
-    
-    @IBOutlet weak var Username: UILabel!
-    
-    @IBOutlet weak var Contrasena: UILabel!
-    
-    @IBOutlet weak var Imagen: UIImageView!
+    @IBOutlet weak var Area: UILabel!
     
 
     override func awakeFromNib() {

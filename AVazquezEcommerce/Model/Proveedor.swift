@@ -97,7 +97,7 @@ class Proveedor{
             result.Ex = error
             result.ErrorMessage = error.localizedDescription
         }
-        //sqlite3_close(conexion.db)
+        sqlite3_close(conexion.db)
         return result
     }
     
@@ -130,7 +130,7 @@ class Proveedor{
             result.Ex = error
             result.ErrorMessage = error.localizedDescription
         }
-        //sqlite3_close(conexion.db)
+        sqlite3_close(conexion.db)
         return result
     }
     

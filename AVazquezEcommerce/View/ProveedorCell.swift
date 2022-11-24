@@ -11,6 +11,8 @@ import UIKit
 class ProveedorCell: SwipeTableViewCell {
     
     
+    @IBOutlet weak var IdProveedor: UILabel!
+    
     @IBOutlet weak var Nombre: UILabel!
     
     @IBOutlet weak var Telefono: UILabel!

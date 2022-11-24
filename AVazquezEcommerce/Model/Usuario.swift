@@ -4,7 +4,7 @@
 //
 //  Created by MacBookMBA3 on 20/09/22.
 //
-
+import UIKit
 import Foundation
 import SQLite3
 
@@ -15,6 +15,7 @@ class Usuario{
     var ApellidoMaterno: String? = nil
     var Username: String? = nil
     var Contrasena: String? = nil
+    var Imagen : String? = nil
     var Usuarios : [Usuario]?
     
     static func GetByUsername(_ Username : String) -> Result{
@@ -52,7 +53,7 @@ class Usuario{
     
     static func Add(_ usuario : Usuario)->Result{
         let result = Result()
-        let query = "INSERT INTO Usuario (Nombre,ApellidoPaterno,ApellidoMaterno,Username,Contrasena) VALUES(?,?,?,?,?);"
+        let query = "INSERT INTO Usuario (Nombre,ApellidoPaterno,ApellidoMaterno,Username,Contrasena,Imagen) VALUES(?,?,?,?,?,?);"
         let conexion = Conexion.init()
         
         var statement : OpaquePointer? = nil
@@ -64,6 +65,12 @@ class Usuario{
             sqlite3_bind_text(statement, 3, (usuario.ApellidoMaterno! as NSString).utf8String, -1, nil)
             sqlite3_bind_text(statement, 4, (usuario.Username! as NSString).utf8String, -1, nil)
             sqlite3_bind_text(statement, 5, (usuario.Contrasena! as NSString).utf8String, -1, nil)
+            let image: Any
+            if sqlite3_column_text(statement,6) != nil {
+                image = String(describing: String(cString: sqlite3_column_text(statement, 6)))
+            }else{
+                image = "NotFound"
+            }
             
             result.Correct = true
             if sqlite3_step(statement) == SQLITE_DONE {
@@ -88,26 +95,26 @@ class Usuario{
     
     static func Update(_ usuario: Usuario)->Result{
         let result = Result()
-                let conexion = Conexion.init()
-                do{
-                    var query = "UPDATE Usuario SET Nombre = \\'name\' , 'ApellidoPaterno' = 'update' , ApellidoMaterno = 'test', UserName = 'user', Password = '143' WHERE IdUsuario = \(usuario.IdUsuario);"
-                    var statement : OpaquePointer? = nil
-                    if sqlite3_prepare_v2(conexion.db, query, -1, &statement, nil) == SQLITE_OK{
-                        if sqlite3_step(statement) == SQLITE_DONE {
-                            result.Correct = true
-                        }else {
-                            result.ErrorMessage = "Ocurrio 'un error al actualizar el usuario"
-                            result.Correct = false
-                        }
-                    }
-                    
-                }catch let error{
-                    result.Correct = false
-                    result.Ex = error
-                    result.ErrorMessage = error.localizedDescription
-                }
-                //sqlite3_close(conexion.db)
-                return result
+             let conexion = Conexion.init()
+             do{
+                 var query = "UPDATE Usuario SET Nombre = '' , 'ApellidoPaterno' = '' , ApellidoMaterno = '', UserName = '', Password = '' WHERE IdUsuario = \(usuario.IdUsuario);"
+                 var statement : OpaquePointer? = nil
+                 if sqlite3_prepare_v2(conexion.db, query, -1, &statement, nil) == SQLITE_OK{
+                     if sqlite3_step(statement) == SQLITE_DONE {
+                         result.Correct = true
+                     }else {
+                         result.ErrorMessage = "Ocurrio 'un error al actualizar el usuario"
+                         result.Correct = false
+                     }
+                 }
+                 
+             }catch let error{
+                 result.Correct = false
+                 result.Ex = error
+                 result.ErrorMessage = error.localizedDescription
+             }
+             sqlite3_close(conexion.db)
+             return result
     }
     
     static func GetAll()->Result{
@@ -127,6 +134,7 @@ class Usuario{
                     usuario.ApellidoMaterno = String(describing: String(cString: sqlite3_column_text(statement, 3)))
                     usuario.Username = String(describing: String(cString: sqlite3_column_text(statement, 4)))
                     usuario.Contrasena = String(describing: String(cString: sqlite3_column_text(statement, 5)))
+                    //usuario.Imagen = String(describing: String(cString: sqlite3_column_text(statement, 6)))
                     
                     result.Objects?.append(usuario)
                 }
@@ -141,7 +149,7 @@ class Usuario{
             result.Ex = error
             result.ErrorMessage = error.localizedDescription
         }
-        //sqlite3_close(conexion.db)
+        sqlite3_close(conexion.db)
         return result
     }
     

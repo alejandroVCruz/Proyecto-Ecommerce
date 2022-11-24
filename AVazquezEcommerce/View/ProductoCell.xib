@@ -10,97 +10,94 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="174" id="KGk-i7-Jjw" customClass="ProductoCell" customModule="AVazquezEcommerce" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="318" height="174"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="237" id="KGk-i7-Jjw" customClass="ProductoCell" customModule="AVazquezEcommerce" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="351" height="237"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" customClass="ProductoCell" customModule="AVazquezEcommerce" customModuleProvider="target">
-                <rect key="frame" x="0.0" y="0.0" width="318" height="174"/>
+                <rect key="frame" x="0.0" y="0.0" width="351" height="237"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="kuA-v7-ySQ">
-                        <rect key="frame" x="0.0" y="0.0" width="318" height="174"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDE-II-UkD">
+                        <rect key="frame" x="0.0" y="-80.333333333333329" width="183" height="397.66666666666669"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOP-7R-Kfz">
-                                <rect key="frame" x="0.0" y="0.0" width="199" height="174"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cube.box.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="c2W-nM-r2V">
-                                        <rect key="frame" x="18" y="19" width="130" height="121"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="69e-3W-sDy">
-                                <rect key="frame" x="206" y="0.0" width="112" height="174"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QU9-Z0-qtX">
-                                        <rect key="frame" x="0.0" y="0.0" width="112" height="37.333333333333336"/>
-                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Precio Unitario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ma1-K6-HKr">
-                                        <rect key="frame" x="0.0" y="44.333333333333336" width="112" height="20.333333333333336"/>
-                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irf-pr-164">
-                                        <rect key="frame" x="0.0" y="71.666666666666671" width="112" height="20.333333333333329"/>
-                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripcion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93V-lT-UBx">
-                                        <rect key="frame" x="0.0" y="99" width="112" height="20.333333333333329"/>
-                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departamento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBc-i0-28h">
-                                        <rect key="frame" x="0.0" y="126.33333333333333" width="112" height="20.333333333333329"/>
-                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proveedor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5B-SU-dR8">
-                                        <rect key="frame" x="0.0" y="153.66666666666666" width="112" height="20.333333333333343"/>
-                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cube.box" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5Vq-bg-O81">
+                                <rect key="frame" x="20" y="67.333333333333343" width="143" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="iIJ-IY-maE">
+                        <rect key="frame" x="199" y="0.0" width="132" height="212"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="NOMBRE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFO-zY-Q8a">
+                                <rect key="frame" x="0.0" y="0.0" width="70.666666666666671" height="20.333333333333332"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRECIO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BG4-XR-vhq">
+                                <rect key="frame" x="0.0" y="38.333333333333336" width="59.333333333333336" height="20.333333333333336"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STOCK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkz-3d-a5p">
+                                <rect key="frame" x="0.0" y="76.666666666666671" width="55.666666666666664" height="20.333333333333329"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="DESCRIPCION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ii-FC-pwN">
+                                <rect key="frame" x="0.0" y="115" width="109.66666666666667" height="20.333333333333343"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEPARTAMENTO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wI8-ta-0ug">
+                                <rect key="frame" x="0.0" y="153.33333333333334" width="132" height="20.333333333333343"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROVEEDOR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qV-SS-aeC">
+                                <rect key="frame" x="0.0" y="191.66666666666666" width="99.333333333333329" height="20.333333333333343"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="kuA-v7-ySQ" secondAttribute="trailing" id="NHP-Hi-6Ah"/>
-                    <constraint firstItem="kuA-v7-ySQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="P5m-MN-6C3"/>
-                    <constraint firstAttribute="bottom" secondItem="kuA-v7-ySQ" secondAttribute="bottom" id="Pfj-XW-b4n"/>
-                    <constraint firstItem="kuA-v7-ySQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="W8Y-gS-Q37"/>
+                    <constraint firstItem="iIJ-IY-maE" firstAttribute="leading" secondItem="pDE-II-UkD" secondAttribute="trailing" constant="16" id="2wO-4n-UU4"/>
+                    <constraint firstItem="pDE-II-UkD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="TST-nr-qpo"/>
+                    <constraint firstAttribute="trailing" secondItem="pDE-II-UkD" secondAttribute="trailing" constant="168" id="ccS-cd-1vr"/>
+                    <constraint firstItem="iIJ-IY-maE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fRy-zD-OhW"/>
+                    <constraint firstItem="pDE-II-UkD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="iaH-sL-NsL"/>
+                    <constraint firstItem="pDE-II-UkD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-91.333333333333343" id="p5G-ux-Oqt"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="Departamento" destination="rBc-i0-28h" id="4et-RF-UjY"/>
-                <outlet property="Descripcion" destination="93V-lT-UBx" id="T6S-uQ-C5h"/>
-                <outlet property="NombreProducto" destination="QU9-Z0-qtX" id="Kv0-gT-NJG"/>
-                <outlet property="PrecioUnitario" destination="ma1-K6-HKr" id="D8D-Rs-tBC"/>
-                <outlet property="Proveedor" destination="q5B-SU-dR8" id="Nn9-8g-XPu"/>
-                <outlet property="Stock" destination="Irf-pr-164" id="OwS-Ju-azU"/>
+                <outlet property="Departamento" destination="wI8-ta-0ug" id="yQN-bI-TWQ"/>
+                <outlet property="Descripcion" destination="2Ii-FC-pwN" id="082-wX-991"/>
+                <outlet property="NombreProducto" destination="ZFO-zY-Q8a" id="OID-Di-52R"/>
+                <outlet property="PrecioUnitario" destination="BG4-XR-vhq" id="jpl-6D-tSx"/>
+                <outlet property="Proveedor" destination="3qV-SS-aeC" id="eac-Wq-yVS"/>
+                <outlet property="Stock" destination="Wkz-3d-a5p" id="Wk0-ot-kYf"/>
             </connections>
-            <point key="canvasLocation" x="0.0" y="52.606635071090047"/>
+            <point key="canvasLocation" x="110" y="8.1753554502369656"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="cube.box.fill" catalog="system" width="128" height="123"/>
+        <image name="cube.box" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

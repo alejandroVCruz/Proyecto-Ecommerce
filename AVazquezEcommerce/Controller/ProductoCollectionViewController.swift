@@ -13,6 +13,8 @@ class ProductoCollectionViewController: UICollectionViewController {
 
     var producto = Producto()
     var productos : [Producto] = []
+    
+    
     var departamento = Departamento()
     var IdDepartamento : Int = 0
     var IdProducto : Int = 0
